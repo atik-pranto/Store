@@ -476,3 +476,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 ecommerce/appsettings.json
+store/package.json
+store/package-lock.json
+ecommerce/store.db-wal
+ecommerce/store.db-shm
+store/package.json
+store/package-lock.json
+store/package-lock.json
