@@ -1,6 +1,7 @@
 
 import { Card, Avatar, CardMedia, CardContent, Typography, CardActions, Button, CardHeader } from "@mui/material";
 import { Product } from "../../app/models/Product";
+import { Link } from "react-router-dom";
 
 type Card = {
     product: Product;
@@ -9,7 +10,7 @@ type Card = {
 export default function ProductCard({ product }: Card){
     return (
         <Card>
-            <CardHeader>
+            <CardHeader 
                 avatar={
                     <Avatar>
                         {product.name.charAt(0).toUpperCase()}
@@ -19,7 +20,7 @@ export default function ProductCard({ product }: Card){
                 titleTypographyProps={{
                     sx: {fontWeight: 'bold', color: 'secondary.main'}
                 }}
-            </CardHeader>
+            />
             <CardMedia
                 sx={{ height: 140, backgroundSize: 'contained' }}
                 image={product.pictureUrl}
@@ -35,7 +36,7 @@ export default function ProductCard({ product }: Card){
             </CardContent>
             <CardActions>
                 <Button size="small">Add to Cart</Button>
-                <Button size="small">View</Button>
+                <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
             </CardActions>
         </Card>
     )
