@@ -8,9 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Controllers
 {
-    [ApiController]
-    [Route("ecommerce/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseEcommerceController
     {
         private readonly StoreContext _context;
 
