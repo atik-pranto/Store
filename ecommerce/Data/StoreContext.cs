@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ecommerce.Entities;
+using System.Diagnostics;
 
 namespace ecommerce.Data
 {
@@ -10,5 +11,6 @@ namespace ecommerce.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Basket> baskets { get; set; }
     }
 }
