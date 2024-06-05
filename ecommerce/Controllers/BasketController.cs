@@ -26,7 +26,7 @@ namespace ecommerce.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Basket>> GetBasket()
+        public async Task<ActionResult<BasketDto>> GetBasket()
         {
             var basket = await RetrieveBasket();
 
@@ -36,13 +36,13 @@ namespace ecommerce.Controllers
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
                 Items = basket.Items.Select(item => new BasketItemDto {
-                    ProductId = item.productId,
-                    Quantity = item.Product.Name,
+                    ProductId = item.Product.Id,
+                    Name = item.Product.Name,
                     Price = item.Product.Price,
                     PictureUrl = item.Product.PictureUrl,
                     Type = item.Product.Type,
                     Brand = item.Product.Brand,
-                    Quantiy = item.Quantity
+                    Quantity = item.Product.QuantityInStock
 
                 }).ToList()
             };
