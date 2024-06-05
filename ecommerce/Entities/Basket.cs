@@ -10,7 +10,7 @@ namespace ecommerce.Entities
     {
         public int Id { get; set; }
 
-        public string buyerId { get; set; }
+        public string BuyerId { get; set; }
 
         public List<BasketItem> Items { get; set; } = new();
 

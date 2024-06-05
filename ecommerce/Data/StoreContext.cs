@@ -11,6 +11,6 @@ namespace ecommerce.Data
         }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Basket> baskets { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
     }
 }
